@@ -18,6 +18,6 @@ const images = [
 
 
 const galleryRef = document.querySelector('#gallery');
-for (const image of images) {
-  galleryRef.insertAdjacentHTML('beforeend', `<li style="margin: 8px"><img src="${image.url}" alt="${image.alt}" style="width: 380px"></img></li>`);
-}
+images.forEach(image => {
+  galleryRef.insertAdjacentHTML('beforeend', `<li style="margin: 8px"><img src="${image.url}" alt="${image.alt}" style="width: 380px"></img></li>`)
+});
