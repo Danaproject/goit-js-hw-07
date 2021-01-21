@@ -18,25 +18,6 @@ const images = [
 
 
 const galleryRef = document.querySelector('#gallery');
-
-const createImage = image => {
-    const itemRef = document.createElement('li');
-    const imgRef = document.createElement('img');
-    imgRef.src = image.url;
-    imgRef.alt = image.alt;
-    
-    imgRef.style.width = '380px';
-    itemRef.style.margin = "8px";
-    
-    itemRef.appendChild(imgRef);
-    return itemRef;
+for (const image of images) {
+  galleryRef.insertAdjacentHTML('beforeend', `<li style="margin: 8px"><img src="${image.url}" alt="${image.alt}" style="width: 380px"></img></li>`);
 }
-const imagesItem = images.map(image => createImage(image));
-galleryRef.append(...imagesItem);
-
-galleryRef.style.display = "flex";
-galleryRef.style.flexWrap = "wrap";
-galleryRef.style.margin = "-8px";
-galleryRef.style.listStyle = "none";
-
-console.log(imagesItem);
