@@ -4,5 +4,5 @@ const textRef = document.querySelector('#text');
 sliderRef.addEventListener('input', handleInputChange);
 
 function handleInputChange(e) {
-    textRef.style.fontSize = sliderRef.value + "px";
+    textRef.style.fontSize = e.target.value + "px";
 }
