@@ -22,11 +22,11 @@ function createBoxes(amount) {
 }
 
 function renderBoxesHandler() {
-    createBoxes(inputRef.value)
+    createBoxes(inputRef.value);
 }
 
 function destroyBoxes() {
-    boxesRef.innerHTML = ''
+    boxesRef.innerHTML = '';
 }
 
 renderBtnRef.addEventListener('click', renderBoxesHandler, false);
