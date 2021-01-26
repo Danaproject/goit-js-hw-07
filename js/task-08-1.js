@@ -6,29 +6,22 @@ const boxesRef = document.querySelector('#boxes');
 let initialSize = 30;
     
 function createBoxes(amount) {
-
-    const renderBlock = [...Array(Number(amount)).keys()];
-
-    renderBlock.forEach(() => { 
+    for (let i = 0; i < inputRef.value; i += 1) {
         const randomColor = Math.floor(Math.random()*16777215).toString(16);
         const newBox = document.createElement('div');
         newBox.style.backgroundColor = "#" + randomColor;;
         newBox.style.width = `${initialSize}px`;
         newBox.style.height = `${initialSize}px`;
-        initialSize += 10;
-        boxesRef.appendChild(newBox)
-    });
-}
+        boxesRef.appendChild(newBox);
 
-function renderBoxesHandler() {
-    createBoxes(inputRef.value)
+        initialSize += 10;
+    }
+    return boxesRef;
 }
 
 function destroyBoxes() {
     boxesRef.innerHTML = '';
     initialSize = 30;
 }
-renderBtnRef.addEventListener('click', renderBoxesHandler, false);
+renderBtnRef.addEventListener('click', createBoxes);
 destroyBtnRef.addEventListener('click', destroyBoxes);
-
-
