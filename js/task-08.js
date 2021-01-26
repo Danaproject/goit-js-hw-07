@@ -26,9 +26,9 @@ function renderBoxesHandler() {
 }
 
 function destroyBoxes() {
-    boxesRef.innerHTML = '';
-    initialSize = 30;
+    boxesRef.innerHTML = ''
 }
+
 renderBtnRef.addEventListener('click', renderBoxesHandler, false);
 destroyBtnRef.addEventListener('click', destroyBoxes);
 
