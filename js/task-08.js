@@ -3,9 +3,10 @@ const renderBtnRef = document.querySelector('button[data-action="render"]');
 const destroyBtnRef = document.querySelector('button[data-action="destroy"]');
 const boxesRef = document.querySelector('#boxes');
 
-let initialSize = 30;
-    
 function createBoxes(amount) {
+    let initialSize = 30;
+    const currentCount = boxesRef.childElementCount;
+    if (Number(currentCount) > 0) initialSize += currentCount * 10;
 
     const renderBlock = [...Array(Number(amount)).keys()];
 
@@ -16,7 +17,7 @@ function createBoxes(amount) {
         newBox.style.width = `${initialSize}px`;
         newBox.style.height = `${initialSize}px`;
         initialSize += 10;
-        boxesRef.appendChild(newBox)
+        boxesRef.appendChild(newBox);
     });
 }
 
