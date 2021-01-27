@@ -28,4 +28,5 @@ const galleryRef = document.querySelector('#gallery');
 images.forEach(image => {
   imageList.push(`<li style="margin: 8px"><img src="${image.url}" alt="${image.alt}" style="width: 380px"></img></li>`);
 });
-galleryRef.insertAdjacentHTML('beforeend', imageList);
+
+galleryRef.insertAdjacentHTML('beforeend', imageList.join(''));
